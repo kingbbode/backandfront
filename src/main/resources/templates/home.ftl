@@ -7,6 +7,18 @@
             crossorigin="anonymous"></script>
 </head>
 <body>
-<h1>home</h1>
+<h1>이선호 프론트엔드 알려주기</h1>
+<button id="loadBtn">가져와</button>
+<div id="test">
+
+</div>
+<script>
+    $("#loadBtn").click(function(){
+        $.get( "/friend", function( data ) {
+            for(var i in data)
+           $('#test').append(data[i]['name'] + ' ');
+        });
+    });
+</script>
 </body>
 </html>
